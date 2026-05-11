@@ -1,0 +1,624 @@
+:root {
+  color-scheme: dark;
+  --ink: #f7fbff;
+  --muted: #b8c6d5;
+  --deep: #061219;
+  --panel: #102531;
+  --panel-strong: #183342;
+  --line: rgba(255, 255, 255, 0.14);
+  --aqua: #2dd4bf;
+  --gold: #f4c95d;
+  --coral: #ff8a6a;
+  --navy: #0b1f2a;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--deep);
+  color: var(--ink);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.site-shell {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    linear-gradient(180deg, rgba(45, 212, 191, 0.12), transparent 26rem),
+    linear-gradient(135deg, #061219 0%, #0b1f2a 52%, #142b38 100%);
+}
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1rem clamp(1rem, 4vw, 4rem);
+  border-bottom: 1px solid var(--line);
+  background: rgba(6, 18, 25, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  min-width: 0;
+}
+
+.brand-mark {
+  display: grid;
+  width: 3rem;
+  height: 3rem;
+  place-items: center;
+  border: 1px solid rgba(45, 212, 191, 0.45);
+  border-radius: 0.5rem;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.22), rgba(244, 201, 93, 0.16));
+  color: var(--aqua);
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.brand strong,
+.brand small {
+  display: block;
+}
+
+.brand strong {
+  font-size: 0.98rem;
+}
+
+.brand small {
+  max-width: 22rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.nav-links a:hover {
+  color: var(--aqua);
+}
+
+.menu-button {
+  display: none;
+  width: 2.7rem;
+  height: 2.7rem;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.menu-button span {
+  display: block;
+  width: 1.1rem;
+  height: 0.12rem;
+  margin: 0.16rem auto;
+  background: var(--ink);
+}
+
+.hero-section {
+  position: relative;
+  display: grid;
+  min-height: 82vh;
+  grid-template-columns: minmax(0, 0.95fr) minmax(22rem, 1.05fr);
+  align-items: center;
+  gap: clamp(2rem, 5vw, 5rem);
+  padding: clamp(4rem, 7vw, 7rem) clamp(1rem, 5vw, 5rem) 3rem;
+}
+
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(6, 18, 25, 0.92) 0%, rgba(6, 18, 25, 0.42) 48%, rgba(6, 18, 25, 0.8) 100%),
+    radial-gradient(circle at 72% 38%, rgba(45, 212, 191, 0.34), transparent 22rem),
+    repeating-linear-gradient(160deg, rgba(255, 255, 255, 0.055) 0 1px, transparent 1px 5.5rem);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 48rem;
+}
+
+.eyebrow,
+.section-kicker {
+  margin: 0 0 0.9rem;
+  color: var(--gold);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  max-width: 52rem;
+  margin-bottom: 1.4rem;
+  font-size: clamp(2.7rem, 6vw, 5.8rem);
+  line-height: 0.98;
+}
+
+h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(2rem, 4vw, 3.8rem);
+  line-height: 1.02;
+}
+
+h3 {
+  margin-bottom: 0.9rem;
+  font-size: 1.35rem;
+}
+
+p {
+  color: var(--muted);
+  font-size: 1.03rem;
+  line-height: 1.7;
+}
+
+.hero-actions,
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.85rem;
+  margin-top: 2rem;
+}
+
+.primary-action,
+.secondary-action {
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.45rem;
+  padding: 0.82rem 1.15rem;
+  font-weight: 800;
+}
+
+.primary-action {
+  background: var(--aqua);
+  color: #031216;
+}
+
+.secondary-action {
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: var(--ink);
+}
+
+.primary-action:hover,
+.secondary-action:hover,
+.footer-links a:hover {
+  transform: translateY(-1px);
+}
+
+.vehicle-visual {
+  position: absolute;
+  right: clamp(1rem, 6vw, 7rem);
+  bottom: clamp(4rem, 9vw, 8rem);
+  width: min(34rem, 42vw);
+  aspect-ratio: 1.7;
+  opacity: 0.95;
+}
+
+.vehicle-body {
+  position: absolute;
+  inset: 30% 8%;
+  border: 2px solid rgba(45, 212, 191, 0.8);
+  border-radius: 50% 38% 42% 50%;
+  background: linear-gradient(135deg, rgba(24, 51, 66, 0.95), rgba(45, 212, 191, 0.18));
+  box-shadow: 0 2rem 5rem rgba(45, 212, 191, 0.22);
+}
+
+.vehicle-sensor,
+.vehicle-thruster {
+  position: absolute;
+  border: 2px solid rgba(244, 201, 93, 0.85);
+  border-radius: 999px;
+}
+
+.vehicle-sensor {
+  top: 24%;
+  left: 45%;
+  width: 16%;
+  height: 26%;
+}
+
+.vehicle-thruster {
+  bottom: 22%;
+  width: 18%;
+  height: 16%;
+  background: rgba(255, 138, 106, 0.16);
+}
+
+.vehicle-thruster.left {
+  left: 10%;
+}
+
+.vehicle-thruster.right {
+  right: 10%;
+}
+
+.stats-band {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-block: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.stats-band div {
+  padding: 1.5rem clamp(1rem, 4vw, 4rem);
+  border-right: 1px solid var(--line);
+}
+
+.stats-band div:last-child {
+  border-right: 0;
+}
+
+.stats-band strong,
+.stats-band span {
+  display: block;
+}
+
+.stats-band strong {
+  color: var(--aqua);
+  font-size: clamp(2rem, 4vw, 3.3rem);
+}
+
+.stats-band span {
+  color: var(--muted);
+}
+
+.content-section,
+.mission-band,
+.cta-section,
+.site-footer {
+  padding: clamp(4rem, 8vw, 7rem) clamp(1rem, 5vw, 5rem);
+}
+
+.split-section {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: clamp(2rem, 6vw, 6rem);
+}
+
+.section-copy {
+  display: grid;
+  gap: 1.2rem;
+}
+
+.section-heading {
+  max-width: 58rem;
+  margin-bottom: 2rem;
+}
+
+.mission-band {
+  background:
+    linear-gradient(135deg, rgba(255, 138, 106, 0.16), rgba(45, 212, 191, 0.12)),
+    var(--panel);
+}
+
+.mission-band h2 {
+  max-width: 66rem;
+}
+
+.subteam-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.info-card {
+  border: 1px solid var(--line);
+  border-radius: 0.5rem;
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1.35rem;
+}
+
+.info-card h3 {
+  color: var(--aqua);
+}
+
+dl {
+  display: grid;
+  gap: 0.75rem;
+  margin: 1.2rem 0 0;
+}
+
+dt {
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+dd {
+  margin: 0.18rem 0 0;
+  color: var(--ink);
+}
+
+.small-note {
+  margin: 1.3rem 0 0;
+  font-size: 0.92rem;
+}
+
+.vehicles-section {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.vehicle-list,
+.sponsor-grid,
+.officer-grid {
+  display: grid;
+  gap: 0.8rem;
+}
+
+.vehicle-list {
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.vehicle-list span,
+.sponsor-grid span,
+.officer-card {
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  background: rgba(16, 37, 49, 0.78);
+  padding: 1rem;
+  color: var(--ink);
+  font-weight: 750;
+}
+
+.cta-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  background: linear-gradient(90deg, var(--panel-strong), rgba(20, 43, 56, 0.62));
+}
+
+.cta-section p {
+  max-width: 48rem;
+}
+
+.officer-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.officer-card {
+  min-height: 7rem;
+}
+
+.officer-card span,
+.timeline-item span {
+  display: block;
+  margin-bottom: 0.6rem;
+  color: var(--gold);
+  font-size: 0.74rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.officer-card strong {
+  display: block;
+  font-size: 1.08rem;
+}
+
+.impact-section {
+  background:
+    linear-gradient(180deg, rgba(244, 201, 93, 0.07), transparent),
+    rgba(255, 255, 255, 0.025);
+}
+
+.timeline {
+  display: grid;
+  gap: 1rem;
+  max-width: 58rem;
+}
+
+.timeline-item {
+  position: relative;
+  border-left: 3px solid var(--aqua);
+  background: rgba(255, 255, 255, 0.045);
+  padding: 1.2rem 1.2rem 1.2rem 1.5rem;
+}
+
+.timeline-item h3 {
+  margin-bottom: 0.45rem;
+}
+
+.timeline-item p {
+  margin-bottom: 0;
+}
+
+.sponsor-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.sponsor-grid span {
+  display: grid;
+  min-height: 6rem;
+  place-items: center;
+  text-align: center;
+}
+
+.site-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  border-top: 1px solid var(--line);
+  background: #041016;
+}
+
+.site-footer h2 {
+  font-size: clamp(1.8rem, 3vw, 3rem);
+}
+
+.footer-links {
+  align-content: flex-start;
+  justify-content: flex-end;
+  min-width: min(28rem, 100%);
+  margin-top: 0;
+}
+
+.footer-links a {
+  border: 1px solid var(--line);
+  border-radius: 0.45rem;
+  padding: 0.8rem 1rem;
+  color: var(--muted);
+}
+
+@media (max-width: 980px) {
+  .hero-section,
+  .split-section,
+  .subteam-grid,
+  .vehicle-list,
+  .sponsor-grid,
+  .officer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .hero-section {
+    min-height: auto;
+    padding-top: 6rem;
+  }
+
+  .vehicle-visual {
+    width: 42vw;
+    opacity: 0.55;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-header {
+    align-items: flex-start;
+  }
+
+  .brand small {
+    display: none;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    right: 1rem;
+    left: 1rem;
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    border: 1px solid var(--line);
+    border-radius: 0.5rem;
+    background: #071721;
+    padding: 0.35rem;
+  }
+
+  .nav-links.is-open {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 0.9rem;
+  }
+
+  .hero-section,
+  .split-section,
+  .subteam-grid,
+  .vehicle-list,
+  .sponsor-grid,
+  .officer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-section {
+    padding-bottom: 4rem;
+  }
+
+  .hero-media {
+    opacity: 0.82;
+  }
+
+  .vehicle-visual {
+    right: -5rem;
+    bottom: 3rem;
+    width: 24rem;
+  }
+
+  .stats-band {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-band div {
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .cta-section,
+  .site-footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .footer-links {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 460px) {
+  h1 {
+    font-size: 2.35rem;
+  }
+
+  .brand strong {
+    font-size: 0.86rem;
+  }
+
+  .brand-mark {
+    width: 2.55rem;
+    height: 2.55rem;
+  }
+
+  .hero-actions,
+  .footer-links {
+    flex-direction: column;
+  }
+
+  .primary-action,
+  .secondary-action,
+  .footer-links a {
+    width: 100%;
+  }
+}
