@@ -46,9 +46,12 @@ After changes are pushed to `main`, GitHub Actions will:
 
 1. Install dependencies.
 2. Build the React app from `app/frontend`.
-3. Publish `app/frontend/dist` to GitHub Pages.
+3. Publish `app/frontend/dist` to the `gh-pages` branch.
 
-In the GitHub repository settings, set Pages source to **GitHub Actions**.
+In the GitHub repository settings, set Pages source to **Deploy from a branch**, then choose:
+
+- Branch: `gh-pages`
+- Folder: `/root`
 
 Expected public URL after deployment:
 
